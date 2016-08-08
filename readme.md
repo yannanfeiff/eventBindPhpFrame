@@ -19,8 +19,6 @@
 详细介绍请参开网址：
 https://github.com/yannanfeiff/eventBindPhpFrame/wiki
 
-
-
 ####构建大系统能力
 案例：
 现已经该系统开发过一个复杂的美容院系统，包括签到，消费，服务，订单，预约于一体的综合大型程序;

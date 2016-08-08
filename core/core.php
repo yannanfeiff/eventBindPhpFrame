@@ -35,7 +35,7 @@ $replace= file_get_contents(CORE_PATH.'/tpl/index.tpl');
  //用于升级版本
 function upgrade(){
 
-  $update_path='D:/tmp/mobile_mall/core';
+  $update_path='升级目录';
    $target_path=CORE_PATH;
     //只定向复制几个文件夹，而不是全部复制
     $up_arr=include(CORE_PATH.'/tpl/upgrade.tpl');

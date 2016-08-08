@@ -10,7 +10,7 @@
 // +----------------------------------------------------------------------
 //获取前端某个资源，比如bootstrap或者jquery等等，存储到本地core/resource文件夹中,更新程序
 function upgrade_resource($resource){
-    $update_path='D:/tmp/mobile_mall/core/resource/'.$resource;
+    $update_path='升级目录'.$resource;
     if(file_exists($update_path)){
         $target=CORE_PATH.'/resource/'.$resource;
         mk_dir($target);

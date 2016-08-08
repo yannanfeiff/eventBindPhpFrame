@@ -28,9 +28,9 @@ return array(
     ),
     //文件夹复制，主要是插件之类的插件
     'folder_copy'=>array(
-      'D:/tmp/mobile_mall/mobile/plugins/T'=>'plugins',  //T模板插件
-      'D:/tmp/mobile_mall/mobile/plugins/util'=>'plugins', //功能函数插件  后台插件
-      'D:/tmp/mobile_mall/mobile/resource/util'=>'resource', //功能函数插件 前台插件
+      '升级目录'=>'plugins',  //T模板插件
+      '升级目录-，'=>'plugins', //功能函数插件  后台插件
+      '升级目录--'=>'resource', //功能函数插件 前台插件
      ),
      'config_js_tpl_path'=>''  //配置js模板路径，用于缓存修改，可以自定义设置
 
