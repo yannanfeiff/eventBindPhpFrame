@@ -11,7 +11,7 @@ $config['db']['master']['dbhost']       ='127.0.0.1'; //主数据库写，如果
 $config['db']['master']['dbport']       = '3306';
 $config['db']['master']['dbuser']       = 'root';
 $config['db']['master']['dbpwd']        = '';
-$config['db']['master']['dbname']       = '';//正式库meirongu  测试库：meirong
+$config['db']['master']['dbname']       = '';//
 $config['db']['master']['dbcharset']    = 'UTF-8';
 $config['db']['master']['dbprefix']    =  '';
 return $config;
