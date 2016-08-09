@@ -5,13 +5,6 @@ lib(array(
 'error','function','plugin','control','Blitz' //,'model3','blitzphp'
 ));
 
-/*
-plugin('core/config')->on('end_init',function(){
-//动态检测是否需要重写js 中config.js
-plugin('resource')->check_update_config();
-});
-
-*/
 
 /*引入base插件*/
 $plugin_base=plugin('core/base');
