@@ -1,14 +1,12 @@
 <?php
 
-// +----------------------------------------------------------------------
-// | eventBindPhpFrame [ keep simple try auto ]
-// +----------------------------------------------------------------------
-// | Copyright (c) 2015~2016 eventBindPhpFrame All rights reserved.
-// +----------------------------------------------------------------------
-// | Licensed ( http://www.apache.org/licenses/LICENSE-2.0 )
-// +----------------------------------------------------------------------
-// | Author: yannanfei <yannanfeiff@126.com>
-// +----------------------------------------------------------------------
+/**
+ * Created by PhpStorm.
+ * User: Happy
+ * Date: 2015/8/19 0019
+ * Time: 11:30
+ * lcc model再次升级版本，可以兼顾mysqli底层驱动，可以程序执行前配置连接信息 增加pre
+ */
 
 /*使用前配置
         Model3::set_link('db_name','db_prefix');//设置数据库
@@ -217,7 +215,7 @@ class Model3
     //查询操作
     public function  query($sql)
     {
-        return MYSQL::query($sql);
+        return MYSQL::query($this->format_sql($sql));
     }
 
     //执行操作
@@ -306,7 +304,7 @@ class Model3
         if ($this->Is_preview) {
             return $result;
         } else {
-            return $result[0]['num'];
+            return intval($result[0]['num']);
         }
     }
     //将字符串里的#替换为表前缀
@@ -326,13 +324,15 @@ class Model3
             foreach ($update as $key => $value) {
 
                 if(strstr($key,'PRE')){//如果键值包含PRE，直接连接value
-                    $str_arr=explode(' ',$key);
+                    $str.=','.$value;
+                    /*$str_arr=explode(' ',$key);
+
                     if(count($str_arr)>1){
                         $str.=','.$str_arr[0].'='.$value;
                     }
                     else{
                         $str .= ",$key='$value'";
-                    }
+                    }*/
                     //  $str.=$value;continue;//下一次循环
                 }
                 else{
@@ -342,7 +342,6 @@ class Model3
             }
             $str = substr($str, 1);
             $sql = sprintf("update %s set %s where %s", $this->Table_name, $str, $this->Where);
-
         } else {
             return false;
         }
